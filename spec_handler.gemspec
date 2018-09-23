@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'spec_handler'
-  s.version     = '1.0.0'
+  s.version     = '1.0.1'
   s.date        = '2018-09-21'
   s.summary     = "Compile you swift pod organizing your folders."
   s.description = "A quite simple gem which helps your podspec compile your swift code. It organizes the folders when building on xcode."
