@@ -1,4 +1,5 @@
 <h1>SpecHandler</h1>
+
 ## Usage
 gem install spec_handler
 
