@@ -1,4 +1,6 @@
 <h1>SpecHandler</h1>
+## Usage
+gem install spec_handler
 
 ## How it works:
 SpecHandler will run through the folders of the project and will configure the subspec of your pod.
