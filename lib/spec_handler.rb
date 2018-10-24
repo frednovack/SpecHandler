@@ -1,5 +1,3 @@
-require 'benchmark'
-
 class SpecHandler < Pod::Spec
   #SpecHandler created by Frederico Novack (fredynovack@gmail.com)
   def initialize(path, spec, folder_name)
@@ -9,17 +7,18 @@ class SpecHandler < Pod::Spec
   end
 
   def compile()
-     time = Benchmark.measure {
-      if self.path_is_valid(@path)
-        puts "> SpecHandler: Will Compile #{@folder_name} Recursively"
-        self.subspec_path(@path, @spec)
-      else
-        puts  "> SpecHandler: Will Compile #{@folder_name} with expression"
-        spec.source_files = @folder_name + '/Source/**/*.swift'
-        spec.resource = @folder_name + '/**/*.{xib,xcassets}'
-      end
-    }
-    puts "Compiled #{@folder_name} in > %.3f seconds 😃" % time.real
+    start_time = Time.now
+    if self.path_is_valid(@path)
+      puts "> SpecHandler: Will Compile #{@folder_name} Recursively"
+      self.subspec_path(@path, @spec)
+    else
+      puts  "> SpecHandler: Will Compile #{@folder_name} with expression"
+      spec.source_files = @folder_name + '/Source/**/*.swift'
+      spec.resource = @folder_name + '/**/*.{xib,xcassets}'
+    end
+    end_time = Time.now
+    compiled_time = end_time - start_time
+    puts "Compiled pod #{@folder_name} in > %.3f seconds 😃" % compiled_time
 
   end
 
