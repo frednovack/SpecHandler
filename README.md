@@ -1,14 +1,17 @@
 <h1>SpecHandler</h1>
 
-How it works:
+## Usage
+gem install spec_handler
+
+## How it works:
 SpecHandler will run through the folders of the project and will configure the subspec of your pod.
 It will separate the .swift files from the .xibs .
 
 All you have to do is to create a subspec on you pod and create a new instance of SpecHandler passing the source path, the subspec and the folder name.
 With your SpecHandler instance call the 'compile' method.
------------------------------------------------------------------------------------------------------------
-*Example:*
 
+Example of a podspec:
+```ruby
 require 'spec_handler'
 Pod::Spec.new do |s|
   s.name             = 'My Pod'
@@ -29,4 +32,4 @@ Pod::Spec.new do |s|
   s.dependency 'SomeDependency'
 
 end
------------------------------------------------------------------------------------------------------------
+```
